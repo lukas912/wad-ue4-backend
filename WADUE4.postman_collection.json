@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "17cab7ff-bba3-4383-b18d-ac09e75b10e1",
+		"name": "WADUE4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/tasks",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 11,\r\n  \"title\": \"My new Task\",\r\n  \"description\": \"Arthropathy associated with mycoses, ankle and foot\",\r\n  \"status\": \"IDEA\",\r\n  \"deadline\": \"2001.07.04 AD at 12:08:56 PDT\",\r\n  \"contactMail\": \"jwaddicor9@discovery.com\",\r\n  \"url\": \"http://dummyimage.com/137x100.png/cc0000/ffffff\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/task",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Task",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 11,\r\n  \"title\": \"My new Task EDIT\",\r\n  \"description\": \"Arthropathy associated with mycoses, ankle and foot EDIT\",\r\n  \"status\": \"IDEA\",\r\n  \"deadline\": \"2001.07.04 AD at 12:08:56 PDT\",\r\n  \"contactMail\": \"jwaddicor9@discovery.com\",\r\n  \"url\": \"http://dummyimage.com/137x100.png/cc0000/ffffff\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/task",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Task By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/task/11",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"task",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Task By Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/task/11",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"task",
+						"11"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
