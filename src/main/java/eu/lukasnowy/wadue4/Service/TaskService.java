@@ -18,4 +18,8 @@ public class TaskService {
     public Iterable<Task> getTasks() {
         return taskRepository.findAll();
     }
+
+    public void createTasks(Iterable<Task> tasks) {
+        taskRepository.saveAll(tasks);
+    }
 }

@@ -29,7 +29,7 @@ public class Task {
 
     @Getter
     @Setter
-    Date deadline;
+    String deadline;
 
     @Getter
     @Setter
