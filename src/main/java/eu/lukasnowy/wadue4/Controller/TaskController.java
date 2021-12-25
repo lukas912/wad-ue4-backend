@@ -5,6 +5,8 @@ import eu.lukasnowy.wadue4.Service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 @CrossOrigin
 public class TaskController {
@@ -16,10 +18,14 @@ public class TaskController {
         this.taskService = taskService;
     }
 
-
     @GetMapping(path = "/tasks")
     public Iterable<Task> getTasks() {
         return taskService.getTasks();
+    }
+
+    @GetMapping(path="/task/{id}")
+    public Optional<Task> getTaskById(@PathVariable Integer id) {
+        return taskService.getTaskById(id);
     }
 
     @PostMapping(path="/task")

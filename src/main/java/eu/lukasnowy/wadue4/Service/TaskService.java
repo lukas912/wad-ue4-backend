@@ -5,6 +5,8 @@ import eu.lukasnowy.wadue4.Repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class TaskService {
 
@@ -29,5 +31,9 @@ public class TaskService {
 
     public void deleteTask(Integer id) {
         taskRepository.deleteById(id);
+    }
+
+    public Optional<Task> getTaskById(Integer id) {
+        return taskRepository.findById(id);
     }
 }
