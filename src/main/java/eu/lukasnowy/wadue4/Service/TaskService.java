@@ -22,4 +22,12 @@ public class TaskService {
     public void createTasks(Iterable<Task> tasks) {
         taskRepository.saveAll(tasks);
     }
+
+    public void createTask(Task task) {
+        taskRepository.save(task);
+    }
+
+    public void deleteTask(Integer id) {
+        taskRepository.deleteById(id);
+    }
 }

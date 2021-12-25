@@ -3,9 +3,7 @@ package eu.lukasnowy.wadue4.Controller;
 import eu.lukasnowy.wadue4.Model.Task;
 import eu.lukasnowy.wadue4.Service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin
@@ -22,5 +20,15 @@ public class TaskController {
     @GetMapping(path = "/tasks")
     public Iterable<Task> getTasks() {
         return taskService.getTasks();
+    }
+
+    @PostMapping(path="/task")
+    public void createTask(@RequestBody Task task) {
+        taskService.createTask(task);
+    }
+
+    @DeleteMapping(path = "/task/{id}")
+    public void deleteTask(@PathVariable Integer id) {
+        taskService.deleteTask(id);
     }
 }
