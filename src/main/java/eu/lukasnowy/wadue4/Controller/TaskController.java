@@ -37,4 +37,9 @@ public class TaskController {
     public void deleteTask(@PathVariable Integer id) {
         taskService.deleteTask(id);
     }
+
+    @PutMapping
+    public void editTask(@RequestBody Task task) {
+        taskService.editTask(task);
+    }
 }

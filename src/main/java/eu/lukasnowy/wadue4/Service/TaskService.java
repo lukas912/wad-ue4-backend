@@ -5,6 +5,7 @@ import eu.lukasnowy.wadue4.Repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -35,5 +36,21 @@ public class TaskService {
 
     public Optional<Task> getTaskById(Integer id) {
         return taskRepository.findById(id);
+    }
+
+    public void editTask(Task task) {
+        Task taskToEdit = (Task) taskRepository.findAllById(List.of(task.getId()));
+
+        taskToEdit.setTitle(task.getTitle());
+        taskToEdit.setDescription(task.getDescription());
+        taskToEdit.setDeadline(task.getDeadline());
+        taskToEdit.setStatus(task.getStatus());
+        taskToEdit.setContactMail(task.getContactMail());
+        taskToEdit.setUrl(task.getUrl());
+
+        taskRepository.save(taskToEdit);
+
+
+
     }
 }
