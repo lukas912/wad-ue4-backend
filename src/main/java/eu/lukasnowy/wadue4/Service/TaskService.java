@@ -39,18 +39,6 @@ public class TaskService {
     }
 
     public void editTask(Task task) {
-        Task taskToEdit = (Task) taskRepository.findAllById(List.of(task.getId()));
-
-        taskToEdit.setTitle(task.getTitle());
-        taskToEdit.setDescription(task.getDescription());
-        taskToEdit.setDeadline(task.getDeadline());
-        taskToEdit.setStatus(task.getStatus());
-        taskToEdit.setContactMail(task.getContactMail());
-        taskToEdit.setUrl(task.getUrl());
-
-        taskRepository.save(taskToEdit);
-
-
-
+        taskRepository.save(task);
     }
 }
