@@ -1,5 +1,4 @@
 [{
-  "id": 1,
   "title": "Thorac esophag anast NEC",
   "description": "Malignant neoplasm of scrotum",
   "status": "IDEA",
@@ -7,7 +6,6 @@
   "contactMail": "ptodari0@scientificamerican.com",
   "url": "http://dummyimage.com/190x100.png/cc0000/ffffff"
 }, {
-  "id": 2,
   "title": "Ing hernia rep-graft NOS",
   "description": "Unspecified drug or medicinal substance causing adverse effects in therapeutic use",
   "status": "DONE",
@@ -15,7 +13,6 @@
   "contactMail": "tvittori1@usda.gov",
   "url": "http://dummyimage.com/100x100.png/ff4444/ffffff"
 }, {
-  "id": 3,
   "title": "Aspir curett uterus NEC",
   "description": "Other and unspecified intracranial hemorrhage following injury with open intracranial wound, with prolonged [more than 24 hours] loss of consciousness and return to pre-existing conscious level",
   "status": "DOING",
@@ -23,7 +20,6 @@
   "contactMail": "lcheake2@who.int",
   "url": "http://dummyimage.com/157x100.png/dddddd/000000"
 }, {
-  "id": 4,
   "title": "Fat grft skin/subq tiss",
   "description": "Menstrual extraction",
   "status": "INREVIEW",
@@ -31,7 +27,6 @@
   "contactMail": "bpenhall3@typepad.com",
   "url": "http://dummyimage.com/220x100.png/cc0000/ffffff"
 }, {
-  "id": 5,
   "title": "Iridencleisis/iridotasis",
   "description": "Pregnancy with other poor obstetric history",
   "status": "TODONEXT",
@@ -39,7 +34,6 @@
   "contactMail": "emacmeekan4@technorati.com",
   "url": "http://dummyimage.com/142x100.png/dddddd/000000"
 }, {
-  "id": 6,
   "title": "Thoracic vessel inc NEC",
   "description": "Foreign body in lacrimal punctum",
   "status": "IDEA",
@@ -47,7 +41,6 @@
   "contactMail": "jbisco5@apple.com",
   "url": "http://dummyimage.com/102x100.png/cc0000/ffffff"
 }, {
-  "id": 7,
   "title": "Atria septa def rep NEC",
   "description": "Injury to uterus, without mention of open wound into cavity",
   "status": "IDEA",
@@ -55,7 +48,6 @@
   "contactMail": "biredale6@reverbnation.com",
   "url": "http://dummyimage.com/185x100.png/ff4444/ffffff"
 }, {
-  "id": 8,
   "title": "Head scan NEC",
   "description": "Hanging, undetermined whether accidentally or purposely inflicted",
   "status": "IDEA",
@@ -63,7 +55,6 @@
   "contactMail": "ojurkowski7@prweb.com",
   "url": "http://dummyimage.com/136x100.png/5fa2dd/ffffff"
 }, {
-  "id": 9,
   "title": "Oth rad/uln repair/plast",
   "description": "Residual foreign body in soft tissue",
   "status": "IDEA",
@@ -71,7 +62,6 @@
   "contactMail": "ksnufflebottom8@answers.com",
   "url": "http://dummyimage.com/100x100.png/ff4444/ffffff"
 }, {
-  "id": 10,
   "title": "Vectorcardiogram",
   "description": "Arthropathy associated with mycoses, ankle and foot",
   "status": "IDEA",

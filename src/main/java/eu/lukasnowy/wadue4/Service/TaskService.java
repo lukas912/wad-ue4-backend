@@ -20,19 +20,26 @@ public class TaskService {
 
     public Iterable<Task> getTasks(String sort, Status filter) {
 
-        System.out.println("HHH " + filter);
         if (filter != null) {
             return taskRepository.getTasksFiltered(filter);
         }
 
-        switch (sort) {
-            case "deadline":
-                return taskRepository.getTasksSortedByDeadline();
-            case "status":
-                return taskRepository.getTasksSortedByStatus();
-            default:
-                return taskRepository.findAll();
+        else if(sort != null) {
+            switch (sort) {
+                case "deadline":
+                    return taskRepository.getTasksSortedByDeadline();
+                case "status":
+                    return taskRepository.getTasksSortedByStatus();
+                default:
+                    return taskRepository.findAll();
+            }
         }
+
+        else {
+            return taskRepository.findAll();
+        }
+
+
 
     }
 
@@ -53,6 +60,6 @@ public class TaskService {
     }
 
     public void editTask(Task task) {
-        taskRepository.save(task);
+            taskRepository.save(task);
     }
 }
