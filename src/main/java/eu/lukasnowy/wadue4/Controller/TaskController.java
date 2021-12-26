@@ -19,8 +19,9 @@ public class TaskController {
     }
 
     @GetMapping(path = "/tasks")
-    public Iterable<Task> getTasks() {
-        return taskService.getTasks();
+    public Iterable<Task> getTasks(@RequestParam(required = false) String sort) {
+
+        return taskService.getTasks(sort);
     }
 
     @GetMapping(path="/task/{id}")

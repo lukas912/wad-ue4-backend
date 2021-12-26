@@ -5,7 +5,6 @@ import eu.lukasnowy.wadue4.Repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -18,8 +17,17 @@ public class TaskService {
         this.taskRepository = taskRepository;
     }
 
-    public Iterable<Task> getTasks() {
-        return taskRepository.findAll();
+    public Iterable<Task> getTasks(String sort) {
+        switch (sort) {
+            case "deadline":
+                return taskRepository.getTasksSortedByDeadline();
+            case "status":
+                System.out.println("HERE");
+                return taskRepository.getTasksSortedByStatus();
+            default:
+                return taskRepository.findAll();
+        }
+
     }
 
     public void createTasks(Iterable<Task> tasks) {
