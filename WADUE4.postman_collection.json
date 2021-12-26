@@ -24,13 +24,61 @@
 			"response": []
 		},
 		{
+			"name": "Get All Tasks Filter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/tasks?filter=DONE",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "DONE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Tasks Sort",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/tasks?sort=deadline",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "deadline"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Create Task",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"id\": 11,\r\n  \"title\": \"My new Task\",\r\n  \"description\": \"Arthropathy associated with mycoses, ankle and foot\",\r\n  \"status\": \"IDEA\",\r\n  \"deadline\": \"2001.07.04 AD at 12:08:56 PDT\",\r\n  \"contactMail\": \"jwaddicor9@discovery.com\",\r\n  \"url\": \"http://dummyimage.com/137x100.png/cc0000/ffffff\"\r\n}",
+					"raw": "{\r\n  \"title\": \"My new Task\",\r\n  \"description\": \"Arthropathy associated with mycoses, ankle and foot\",\r\n  \"status\": \"IDEA\",\r\n  \"deadline\": \"2001.07.04 AD at 12:08:56 PDT\",\r\n  \"contactMail\": \"jwaddicor9@discovery.com\",\r\n  \"url\": \"http://dummyimage.com/137x100.png/cc0000/ffffff\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
