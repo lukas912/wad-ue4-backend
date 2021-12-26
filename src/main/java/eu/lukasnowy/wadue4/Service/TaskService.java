@@ -1,5 +1,6 @@
 package eu.lukasnowy.wadue4.Service;
 
+import eu.lukasnowy.wadue4.Enum.Status;
 import eu.lukasnowy.wadue4.Model.Task;
 import eu.lukasnowy.wadue4.Repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +18,17 @@ public class TaskService {
         this.taskRepository = taskRepository;
     }
 
-    public Iterable<Task> getTasks(String sort) {
+    public Iterable<Task> getTasks(String sort, Status filter) {
+
+        System.out.println("HHH " + filter);
+        if (filter != null) {
+            return taskRepository.getTasksFiltered(filter);
+        }
+
         switch (sort) {
             case "deadline":
                 return taskRepository.getTasksSortedByDeadline();
             case "status":
-                System.out.println("HERE");
                 return taskRepository.getTasksSortedByStatus();
             default:
                 return taskRepository.findAll();

@@ -27,7 +27,7 @@ public class TaskUnitTests  {
     @Test
     public void getAllTasks() {
         //when
-        taskService.getTasks(null);
+        taskService.getTasks(null, null);
         //then
         verify(taskRepository).findAll();
     }

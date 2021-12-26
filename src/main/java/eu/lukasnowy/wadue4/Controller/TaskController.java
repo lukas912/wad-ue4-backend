@@ -1,5 +1,6 @@
 package eu.lukasnowy.wadue4.Controller;
 
+import eu.lukasnowy.wadue4.Enum.Status;
 import eu.lukasnowy.wadue4.Model.Task;
 import eu.lukasnowy.wadue4.Service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +20,9 @@ public class TaskController {
     }
 
     @GetMapping(path = "/tasks")
-    public Iterable<Task> getTasks(@RequestParam(required = false) String sort) {
+    public Iterable<Task> getTasks(@RequestParam(required = false) String sort, @RequestParam(required = false) Status filter) {
 
-        return taskService.getTasks(sort);
+        return taskService.getTasks(sort, filter);
     }
 
     @GetMapping(path="/task/{id}")
