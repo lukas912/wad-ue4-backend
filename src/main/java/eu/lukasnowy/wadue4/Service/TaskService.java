@@ -19,12 +19,16 @@ public class TaskService {
     }
 
     public Iterable<Task> getTasks(String sort, Status filter) {
+        return filter != null ? taskRepository.getTasksFiltered(filter) : getTasksSorted(sort);
+    }
 
-        if (filter != null) {
-            return taskRepository.getTasksFiltered(filter);
+    private Iterable<Task> getTasksSorted(String sort) {
+
+        if(sort == null) {
+            return taskRepository.findAll();
         }
 
-        else if(sort != null) {
+        else {
             switch (sort) {
                 case "deadline":
                     return taskRepository.getTasksSortedByDeadline();
@@ -34,13 +38,6 @@ public class TaskService {
                     return taskRepository.findAll();
             }
         }
-
-        else {
-            return taskRepository.findAll();
-        }
-
-
-
     }
 
     public void createTasks(Iterable<Task> tasks) {
