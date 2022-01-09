@@ -21,6 +21,10 @@ public class TaskService {
 
     public Iterable<Task> getTasks(String sort, Status filter) {
 
+        if(sort == null && filter == null) {
+            return taskRepository.findAll();
+        }
+
         if(sort == null && filter != null) {
             return taskRepository.getTasksFiltered(filter);
         }
@@ -37,15 +41,12 @@ public class TaskService {
         if(sort.equals("status") && filter != null) {
             return taskRepository.getTasksSortedByStatusFilter(filter);
         }
-        
+
         if(sort.equals("deadline") && filter != null) {
             return taskRepository.getTasksSortedByDeadlineFilter(filter);
         }
 
-        else {
-            return taskRepository.findAll();
-        }
-
+        return null;
     }
 
     public void createTasks(Iterable<Task> tasks) {
