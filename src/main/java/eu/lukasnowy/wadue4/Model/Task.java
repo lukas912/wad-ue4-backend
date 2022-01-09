@@ -29,7 +29,11 @@ public class Task {
 
     @Getter
     @Setter
-    String description;
+    String longDesc;
+
+    @Getter
+    @Setter
+    String shortDesc;
 
     @Getter
     @Setter

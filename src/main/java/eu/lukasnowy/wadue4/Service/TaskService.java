@@ -6,6 +6,7 @@ import eu.lukasnowy.wadue4.Repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -19,25 +20,32 @@ public class TaskService {
     }
 
     public Iterable<Task> getTasks(String sort, Status filter) {
-        return filter != null ? taskRepository.getTasksFiltered(filter) : getTasksSorted(sort);
-    }
 
-    private Iterable<Task> getTasksSorted(String sort) {
+        if(sort == null && filter != null) {
+            return taskRepository.getTasksFiltered(filter);
+        }
 
-        if(sort == null) {
-            return taskRepository.findAll();
+        else if(sort.equals("deadline") && filter == null) {
+            System.out.println("HERE");
+            return taskRepository.getTasksSortedByDeadline();
+        }
+
+        if(sort.equals("status") && filter == null) {
+            return taskRepository.getTasksSortedByStatus();
+        }
+
+        if(sort.equals("status") && filter != null) {
+            return taskRepository.getTasksSortedByStatusFilter(filter);
+        }
+        
+        if(sort.equals("deadline") && filter != null) {
+            return taskRepository.getTasksSortedByDeadlineFilter(filter);
         }
 
         else {
-            switch (sort) {
-                case "deadline":
-                    return taskRepository.getTasksSortedByDeadline();
-                case "status":
-                    return taskRepository.getTasksSortedByStatus();
-                default:
-                    return taskRepository.findAll();
-            }
+            return taskRepository.findAll();
         }
+
     }
 
     public void createTasks(Iterable<Task> tasks) {

@@ -45,7 +45,7 @@ public class TaskUnitTests  {
     @Test
     public void getTasksSortedDeadline() {
         //when
-        taskService.getTasks("deadline", null);
+        taskService.getTasks("deadline", Status.IDEA);
         //then
         verify(taskRepository).getTasksSortedByDeadline();
     }
@@ -53,7 +53,7 @@ public class TaskUnitTests  {
     @Test
     public void getTasksSortedStatus() {
         //when
-        taskService.getTasks("status", null);
+        taskService.getTasks("status",  Status.IDEA);
         //then
         verify(taskRepository).getTasksSortedByStatus();
     }
@@ -61,7 +61,7 @@ public class TaskUnitTests  {
     @Test
     public void getTasksFilter() {
         //when
-        taskService.getTasks(null, Status.DONE);
+        taskService.getTasks("deadline", Status.DONE);
         //then
         verify(taskRepository).getTasksFiltered(Status.DONE);
     }

@@ -6,4 +6,5 @@ public enum Status {
     IDEA,
     INREVIEW,
     TODONEXT,
+    NONE
 }
